@@ -1,0 +1,14 @@
+<template>
+    <p>Personal
+    </p>
+</template>
+
+<script>
+    export default {
+        name: "Personal"
+    }
+</script>
+
+<style scoped>
+
+</style>
