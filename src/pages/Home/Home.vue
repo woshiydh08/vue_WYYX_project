@@ -10,8 +10,8 @@
           <a href="javascript:;" class="loginButton">登录</a>
         </div>
         <div class="nav-list">
-          <div class="">
-            <ul class="list">
+          <div class="listWarp">
+            <ul class="listInner">
               <li><a href="javascript:;">推荐</a></li>
               <li><a href="javascript:;">居家</a></li>
               <li><a href="javascript:;">鞋包配饰</a></li>
@@ -30,17 +30,18 @@
           </span>
         </div>
       </div>
-      <div class="slide">
-        <ul>
-          <li><img src="./img/slide01.jpg" alt=""></li>
-          <li><img src="./img/slide02.jpg" alt=""></li>
-          <li><img src="./img/slide03.jpg" alt=""></li>
-          <li><img src="./img/slide04.jpg" alt=""></li>
-          <li><img src="./img/slide05.jpg" alt=""></li>
-          <li><img src="./img/slide06.jpg" alt=""></li>
-          <li><img src="./img/slide07.jpg" alt=""></li>
-          <li><img src="./img/slide09.jpg" alt=""></li>
+      <div class="slide swiper-container">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide"><img src="./img/slide02.jpg" alt=""></li>
+          <li class="swiper-slide"><img src="./img/slide03.jpg" alt=""></li>
+          <li class="swiper-slide"><img src="./img/slide04.jpg" alt=""></li>
+          <li class="swiper-slide"><img src="./img/slide05.jpg" alt=""></li>
+          <li class="swiper-slide"><img src="./img/slide06.jpg" alt=""></li>
+          <li class="swiper-slide"><img src="./img/slide07.jpg" alt=""></li>
+          <li class="swiper-slide"><img src="./img/slide09.jpg" alt=""></li>
+          <li class="swiper-slide"><img src="./img/slide10.jpg" alt=""></li>
         </ul>
+        <!--<div class="swiper-pagination"></div>-->
       </div>
     </div>
 </template>
@@ -56,13 +57,17 @@
           scrollX: true
 
         });
-        new BScroll('.slide', {
-          click: true, // 触发自定义click
-          scrollX: true
-
-        });
-        new Swiper('slide',{
-          autoplay: 3000
+        var mySwiper = new Swiper(".swiper-container",{
+          effect : "slide",
+          direction: 'horizontal',
+          loop: true, // 循环模式选项
+          autoplay: {
+            disableOnInteraction : false,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+          },
         })
       },
     }
@@ -124,23 +129,26 @@
     .nav-list
       display flex
       white-space: nowrap;
-      .list
-        flex-grow 1
-        display flex
-        flex-flow nowrap
-        li
-          float left
-          width auto
-          flex-shrink 0
-          padding 0 0.16rem
-          margin-left: .26667rem;
-          a
-            display: inline-block;
-            padding: 0 .21333rem;
-            line-height: .8rem;
-            font-size: .37333rem;
-            color: #333;
-            text-align: center;
+      overflow hidden
+
+      .listWarp
+        .listInner
+          flex-grow 1
+          display flex
+          flex-flow nowrap
+          li
+            float left
+            width auto
+            flex-shrink 0
+            padding 0 0.16rem
+            margin-left: .26667rem;
+            a
+              display: inline-block;
+              padding: 0 .21333rem;
+              line-height: .8rem;
+              font-size: .37333rem;
+              color: #333;
+              text-align: center;
       .more
         display flex
         width 1rem
@@ -163,13 +171,14 @@
     width 100%
     height: 4.93333rem;
     background-color: red
+    overflow hidden
     ul
       width 800%
       height 100%
       li
         width calc(100% / 8)
         height 100%
-        float left;
+        float left
         img
           width 100%
           height 100%
