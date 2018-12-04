@@ -9,7 +9,7 @@
           </div>
           <a href="javascript:;" class="loginButton">登录</a>
         </div>
-        <div class="nav">
+        <div class="nav-list">
           <div class="">
             <ul class="list">
               <li><a href="javascript:;">推荐</a></li>
@@ -32,7 +32,14 @@
       </div>
       <div class="slide">
         <ul>
-          <li><img src="" alt=""></li>
+          <li><img src="./img/slide01.jpg" alt=""></li>
+          <li><img src="./img/slide02.jpg" alt=""></li>
+          <li><img src="./img/slide03.jpg" alt=""></li>
+          <li><img src="./img/slide04.jpg" alt=""></li>
+          <li><img src="./img/slide05.jpg" alt=""></li>
+          <li><img src="./img/slide06.jpg" alt=""></li>
+          <li><img src="./img/slide07.jpg" alt=""></li>
+          <li><img src="./img/slide09.jpg" alt=""></li>
         </ul>
       </div>
     </div>
@@ -40,11 +47,22 @@
 
 <script>
     import BScroll from 'better-scroll'
+    import Swiper from 'swiper'
     export default {
       name: "Home",
       mounted(){
-        new BScroll('.list', {
+        new BScroll('.nav-list', {
           click: true, // 触发自定义click
+          scrollX: true
+
+        });
+        new BScroll('.slide', {
+          click: true, // 触发自定义click
+          scrollX: true
+
+        });
+        new Swiper('slide',{
+          autoplay: 3000
         })
       },
     }
@@ -103,7 +121,7 @@
         border-radius: .10667rem;
         margin-left: .21333rem;
         box-sizing: border-box;
-    .nav
+    .nav-list
       display flex
       white-space: nowrap;
       .list
@@ -145,4 +163,14 @@
     width 100%
     height: 4.93333rem;
     background-color: red
+    ul
+      width 800%
+      height 100%
+      li
+        width calc(100% / 8)
+        height 100%
+        float left;
+        img
+          width 100%
+          height 100%
 </style>
