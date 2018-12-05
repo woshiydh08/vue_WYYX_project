@@ -49,7 +49,7 @@
     bottom 0
     background-color #fff
     width 100%
-    height 0.98rem
+    height 1.30667rem;
     display flex
     .guide_item
       display flex
@@ -61,31 +61,34 @@
       color #999999
       &:nth-child(1)
         .item_icon
-          background-position-y calc(5 * -0.66rem)
+          background-position-y -3.52rem
       &:nth-child(2)
         .item_icon
-          background-position-y calc(3 * -0.66rem)
+          background-position-y -2.64rem
       &:nth-child(3)
         .item_icon
-          background-position-y calc(7 * -0.66rem)
+          background-position-y -6.16rem
       &:nth-child(4)
         .item_icon
-          background-position-y calc(1 * -0.66rem)
+          background-position-y -.88rem;
       &:nth-child(5)
         .item_icon
-          background-position-y calc(9 * -0.66rem)
+          background-position-y  -7.92rem
       &.on
         color #02a774
       .item_icon
-        width 0.56rem
-        height 0.56rem
+        width: .74667rem;
+        height: .74667rem;
         background-image url("./img/backgroundIcon.png")
-        background-size: cover;
+        background-size: .74667rem 8.66667rem;
         background-repeat: no-repeat;
+        vertical-align: middle;
       span
-        font-size 12px
-        margin-top 2px
-        margin-bottom 2px
+        display: block;
+        margin-top: .09333rem;
+        font-size: .32rem;
+        color: #555;
+        line-height: 1;
         .iconfont
           font-size 22px
 </style>
