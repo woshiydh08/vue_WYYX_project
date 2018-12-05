@@ -19,6 +19,5 @@
   #app
     width 100%
     height 100%
-    p
-      font-size 0.37rem
+    background-color: #f4f4f4
 </style>

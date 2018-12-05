@@ -1,5 +1,6 @@
-Ê×Ò³ home
-·ÖÀà category
-Ê¶Îï know
-¹ºÎï³µ shopCart
-¸öÈË personal
+é¦–é¡µ home
+åˆ†ç±» category
+è¯†ç‰© know
+è´­ç‰©è½¦ shopCart
+ä¸ªäºº personal
+ç±»åˆ« Category

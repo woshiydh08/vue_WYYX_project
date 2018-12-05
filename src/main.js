@@ -1,11 +1,12 @@
 //主要引入
 import Vue from 'vue'
 import router from './router/index'
-
-
+import store from './store'
+//Vue插件
 import VueLazyload from 'vue-lazyload'
 
-
+//mockjs
+import './mock/mockServer'
 
 import {Button} from 'mint-ui'
 
@@ -23,11 +24,12 @@ Vue.use(VueLazyload, { // 内部会定义一个全局的指令: lazy
 // 注册全局组件(映射成标签)
 
 
-
+Vue.store = store
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   components: {App},
   template: '<App/>',
-  router
+  router,
+  store
 })
