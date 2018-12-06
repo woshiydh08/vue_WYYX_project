@@ -23,17 +23,18 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
-  <!--<script>-->
-    <!--var size = (window.innerWidth || document.documentElement.clientWidth) / 750 * 100;-->
-    <!--document.documentElement.style.fontSize = size + "px";-->
-    <!--document.body.style.fontSize = 24 + "px";-->
-  <!--</script>-->
   <script>
-    (function () {
-      var styleNode = document.createElement('style')
-      var w = document.documentElement.clientWidth/10
-      styleNode.innerHTML = 'html{font-size:'+ w +'px!important}'
-      document.head.appendChild(styleNode)
-    })()
+    var size = (window.innerWidth || document.documentElement.clientWidth) / 1000 * 100;
+    document.documentElement.style.fontSize = size + "px";
+    document.body.style.fontSize = 24 + "px";
+  </script>
+  <script>
+    // (function () {
+    //   var styleNode = document.createElement('style')
+    //   var w = document.documentElement.clientWidth/10
+    //   styleNode.innerHTML = 'html{font-size:'+ w +'px!important}'
+    //   document.head.appendChild(styleNode)
+	  // document.body.style.fontSize = 14 + "px"
+    // })()
   </script>
 </html>

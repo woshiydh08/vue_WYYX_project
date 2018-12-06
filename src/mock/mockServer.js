@@ -7,7 +7,7 @@ import shiwu from './shiwu'
 // 指定监听的url和对应的json数据模板
 Mock.mock('/category', {
   code: 0,
-  category: category
+  data: category
 })
 
 Mock.mock('/msite', {code: 0, data: msite})

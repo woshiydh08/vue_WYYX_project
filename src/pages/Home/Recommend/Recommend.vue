@@ -25,16 +25,15 @@
         </ul>
       </div>
       <div class="product-list">
-        <ul>
+        <ul  v-if="msite.data">
           <li v-for="itme in msite.data.kingKongModule.kingKongList">
             <img :src="itme.picUrl" alt="">
             <span>{{itme.text}}</span>
           </li>
-
         </ul>
       </div>
       <img src="./img/promItem.gif" alt="" class="promItem">
-      <div class="sales01">
+      <div class="sales01" v-if="msite.data">
         <div class="sales01-item01">
           <img :src="msite.data.bigPromotionModule.bigPromotionList[1].data.contents[0].picUrl" alt="">
         </div>
@@ -149,9 +148,6 @@
       ...mapState(['msite','focuslist'])
     },
     watch:{
-      focuslist(){
-
-      }
     }
   }
 </script>

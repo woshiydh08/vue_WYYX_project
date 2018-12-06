@@ -1,5 +1,5 @@
 export default {
-  category: [], //商品数组
+  category: {}, //商品数组
   msite:[],
   focuslist:[]
 }

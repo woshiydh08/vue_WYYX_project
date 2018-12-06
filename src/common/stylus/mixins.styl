@@ -16,6 +16,19 @@ bottom-border-1px($color)
     background-color $color
     transform scaleY(0.5)
 
+right-border-1px($color)
+  position relative
+  border none
+  &:after
+    content ''
+    position absolute
+    right 0
+    top 0
+    width 1px
+    height 100%
+    background-color $color
+    transform scaleY(0.5)
+
 // 一像素上边框
 top-border-1px($color)
   position relative

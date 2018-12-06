@@ -1,26 +1,26 @@
 <template>
   <footer class="footer_guide border-1px">
-    <a href="javascript:;" class="guide_item" @click="goto('./home')">
+    <a href="javascript:;" class="guide_item" @click="goto('/home')">
       <span class="item_icon" :class="{on: $route.path==='/home'}">
       </span>
       <span>首页</span>
     </a>
-    <a href="javascript:;" class="guide_item" @click="goto('/category')">
+    <a href="javascript:;" class="guide_item" @click="goto('/category?id=109230000')">
       <span class="item_icon" :class="{on: $route.path==='/category'}">
       </span>
       <span>分类</span>
     </a>
-    <a href="javascript:;"  class="guide_item" @click="goto('./know')">
+    <a href="javascript:;"  class="guide_item" @click="goto('/know')">
       <span class="item_icon" :class="{on: $route.path==='/know'}">
       </span>
       <span>识物</span>
     </a>
-    <a href="javascript:;"  class="guide_item" @click="goto('./shopcart')">
+    <a href="javascript:;"  class="guide_item" @click="goto('/shopcart')">
       <span class="item_icon"  :class="{on: $route.path==='/shopcart'}" >
       </span>
       <span>购物车</span>
     </a>
-    <a href="javascript:;"  class="guide_item"  @click="goto('./personal')">
+    <a href="javascript:;"  class="guide_item"  @click="goto('/personal')">
       <span class="item_icon" :class="{on: $route.path==='/personal'}">
       </span>
       <span>个人</span>

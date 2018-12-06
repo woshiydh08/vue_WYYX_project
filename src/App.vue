@@ -16,8 +16,9 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  @import "./common/stylus/media.styl"
   #app
     width 100%
     height 100%
-    background-color: #f4f4f4
+    background-color: #fff
 </style>
