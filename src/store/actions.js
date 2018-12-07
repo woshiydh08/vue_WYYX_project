@@ -4,13 +4,15 @@ vuex的actions模块
 import {
   reqCategory,
   reqMsite,
-  reqFocusList
+  reqFocusList,
+  reqTab2
 } from '../api'
 
 import {
   RECEIVE_CATEGORY,
   RECEIVE_MSITE,
-  RECEIVE_FOCUSLIST
+  RECEIVE_FOCUSLIST,
+  RECEIVE_TAB2
 
 } from './mutation-types'
 
@@ -30,4 +32,11 @@ export default {
     commit(RECEIVE_FOCUSLIST, {focuslist: result})
     typeof cb==='function' && cb()
   },
+  async getTab2({commit, state}) {
+    const result = await reqTab2()
+    console.log(result);
+    commit(RECEIVE_TAB2, {tab2: result.data.result})
+  },
+
+
 }

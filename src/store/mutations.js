@@ -5,7 +5,8 @@ import Vue from 'vue'
 import {
   RECEIVE_CATEGORY,
   RECEIVE_MSITE,
-  RECEIVE_FOCUSLIST
+  RECEIVE_FOCUSLIST,
+  RECEIVE_TAB2
 } from './mutation-types'
 
 export default {
@@ -19,4 +20,7 @@ export default {
     state.focuslist = focuslist
   },
 
+  [RECEIVE_TAB2](state, {tab2}) {
+  state.tab2 = tab2
+}
 }

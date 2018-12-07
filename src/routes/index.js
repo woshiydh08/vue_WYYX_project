@@ -85,7 +85,6 @@ export default[
       var size = (window.innerWidth || document.documentElement.clientWidth) / 750 * 100;
       document.documentElement.style.fontSize = size + "px";
       document.body.style.fontSize = 24 + "px";
-      console.log("leave");
       next()
     },
   },

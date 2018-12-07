@@ -1,7 +1,7 @@
 import Mock from 'mockjs'
 import msite from './msite.json'
 import category from './category'
-import shiwu from './shiwu'
+import tab2 from './tab2'
 
 // console.log('mockServer')
 // 指定监听的url和对应的json数据模板
@@ -13,6 +13,7 @@ Mock.mock('/category', {
 Mock.mock('/msite', {code: 0, data: msite})
 Mock.mock('/focus_list', {code: 0, data: msite.focusList})
 Mock.mock('/cateList', {code: 0, data: msite.cateList})
+Mock.mock('/tab2', {code: 0, data: tab2})
 
 
 
