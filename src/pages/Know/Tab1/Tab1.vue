@@ -1,48 +1,55 @@
 <template>
   <div class="main">
-    <div class="mainBanner">
-      <img src="https://yanxuan.nosdn.127.net/b7db4d98e47a94adda8b4d61bc5f4af0.jpg?imageView&amp;quality=65&amp;thumbnail=690y376" alt="" width="100%" height="100%">
+    <div class="mainBanner" v-if="tab1.ad">
+      <img :src="tab1.ad.picUrl" alt="" width="100%" height="100%">
     </div>
-    <div class="item1">
-      <div class="itemBox">
-        <div class="left">
-          <div class="userName">
+    <div v-for="tab in tab1.topics">
+      <div class="item1" v-if="tab.type === 1">
+        <div class="itemBox">
+          <div class="left">
+            <div class="userName">
             <span class="ava">
-              <img src="https://yanxuan.nosdn.127.net/6311ec4540ebe620ddcd49b10e08a8f6.png?imageView&amp;quality=65&amp;thumbnail=56y56" alt="" >
+              <img :src="tab.avatar" alt="" >
             </span>
-            <span class="name">服装组：小服</span>
+              <span class="name">{{tab.nickname}}</span>
+            </div>
+            <div class="title">{{tab.subTitle}}</div>
+            <div class="desc">{{tab.title}}</div>
+            <div class="count">
+              <i class="icon"></i>
+              <span class="see">{{tab.readCount}}人看过</span>
+            </div>
           </div>
-          <div class="title">双11忘买羽绒服？没关系，还有双12！</div>
-          <div class="desc">双12时髦保暖羽绒服低至6折</div>
-          <div class="count">
-            <i class="icon"></i>
-            <span class="see">23.8k人看过</span>
+          <div class="right">
+            <img :src="tab.picUrl" alt="" width="100%" height="100%">
           </div>
         </div>
-        <div class="right">
-          <img src="https://yanxuan.nosdn.127.net/affbdf2116ad47ae5fc904b02ab145f6.jpg?imageView&amp;quality=65&amp;thumbnail=272y272" alt="" width="100%" height="100%">
-        </div>
       </div>
-    </div>
-    <div class="item2">
-      <div class="userName">
+      <div class="item2" v-if="tab.type === 0">
+        <div class="userName">
             <span class="ava">
-              <img src="https://yanxuan.nosdn.127.net/6311ec4540ebe620ddcd49b10e08a8f6.png?imageView&amp;quality=65&amp;thumbnail=56y56" alt="" >
+              <img :src="tab.avatar" alt="" >
             </span>
-        <span class="name">服装组：小服</span>
-      </div>
-      <div class="title">揭秘2018严选商品线隐藏进阶之路，为美好生活品质加分</div>
-      <div class="pic">
-        <img src="https://yanxuan.nosdn.127.net/2dad391fc894261717d59c1e31e221f8.jpg?imageView&amp;quality=65&amp;thumbnail=690y376" alt="" width="100%" height="100%">
+          <span class="name">{{tab.nickname}}</span>
+        </div>
+        <div class="title">{{tab.subTitle}}</div>
+        <div class="pic">
+          <img :src="tab.picUrl" alt="" width="100%" height="100%">
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-    export default {
-        name: "Tab1"
+  import {mapState} from 'vuex'
+
+  export default {
+    name: "Tab1",
+    computed:{
+      ...mapState(['tab1']),
     }
+  }
 </script>
 
 <style scoped lang="stylus">

@@ -1,83 +1,27 @@
 <template>
   <div class="main">
-    <div class="item1">
-      <div class="title">11月30日新品放映室</div>
-      <div class="content">窝在懒人沙发上，小夜灯下敲打着键盘，不时抿一口清茶，用一碗螺蛳粉抚慰加班饥肠辘辘的胃。</div>
+    <div class="item1" v-for="tab in tab3">
+      <div class="title">{{tab.nickname}}</div>
+      <div class="content">{{tab.subTitle}}</div>
       <div class="pic">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
+        <img :src="t.itemUrl" alt=""  v-for="t in tab.itemList">
       </div>
       <div class="see">
         <i class="icon"></i>
-        <span class="count">21.2k人看过</span>
-      </div>
-    </div>
-    <div class="item1">
-      <div class="title">11月30日新品放映室</div>
-      <div class="content">窝在懒人沙发上，小夜灯下敲打着键盘，不时抿一口清茶，用一碗螺蛳粉抚慰加班饥肠辘辘的胃。</div>
-      <div class="pic">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-      </div>
-      <div class="see">
-        <i class="icon"></i>
-        <span class="count">21.2k人看过</span>
-      </div>
-    </div>
-    <div class="item1">
-      <div class="title">11月30日新品放映室</div>
-      <div class="content">窝在懒人沙发上，小夜灯下敲打着键盘，不时抿一口清茶，用一碗螺蛳粉抚慰加班饥肠辘辘的胃。</div>
-      <div class="pic">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-      </div>
-      <div class="see">
-        <i class="icon"></i>
-        <span class="count">21.2k人看过</span>
-      </div>
-    </div>
-    <div class="item1">
-      <div class="title">11月30日新品放映室</div>
-      <div class="content">窝在懒人沙发上，小夜灯下敲打着键盘，不时抿一口清茶，用一碗螺蛳粉抚慰加班饥肠辘辘的胃。</div>
-      <div class="pic">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-        <img src="https://yanxuan.nosdn.127.net/0e5d2564fce82f15361b05a035895bb2.jpg?imageView&quality=65&thumbnail=272y272" alt="">
-      </div>
-      <div class="see">
-        <i class="icon"></i>
-        <span class="count">21.2k人看过</span>
+        <span class="count">{{tab.readCount}}人看过</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import {mapState} from 'vuex'
+
   export default {
-    name: "Tab3"
+    name: "Tab3",
+    computed:{
+      ...mapState(['tab3']),
+    }
   }
 </script>
 

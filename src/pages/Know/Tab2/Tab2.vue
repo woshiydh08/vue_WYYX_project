@@ -5,19 +5,19 @@
         <div class="left">
           <div class="userName">
             <span class="ava">
-              <img src="https://yanxuan.nosdn.127.net/6311ec4540ebe620ddcd49b10e08a8f6.png?imageView&amp;quality=65&amp;thumbnail=56y56" alt="" >
+              <img :src="tab.avatar" alt="" >
             </span>
-            <span class="name">服装组：小服</span>
+            <span class="name">{{tab.nickname}}</span>
           </div>
-          <div class="title">双11忘买羽绒服？没关系，还有双12！</div>
-          <div class="desc">双12时髦保暖羽绒服低至6折</div>
+          <div class="title">{{tab.subTitle}}</div>
+          <div class="desc">{{tab.title}}</div>
           <div class="count">
             <i class="icon"></i>
-            <span class="see">23.8k人看过</span>
+            <span class="see">{{tab.readCount}}人看过</span>
           </div>
         </div>
         <div class="right">
-          <img :src="tab.picUrl" alt="" width="100%" height="auto">
+          <img :src="tab.picUrl" alt="" width="100%" height="100%">
         </div>
       </div>
     </div>
@@ -32,7 +32,6 @@
     name: "Tab2",
     computed:{
       ...mapState(['tab2']),
-
     }
   }
 </script>
@@ -124,4 +123,7 @@
           position: relative;
           overflow: hidden;
           border-radius: .08rem;
+          display:flex;
+          align-items:center;
+          justify-content:center;
 </style>

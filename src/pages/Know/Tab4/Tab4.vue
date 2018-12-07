@@ -5,14 +5,21 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex'
+
   export default {
-    name: "Tab4"
+    name: "Tab4",
+    computed:{
+      ...mapState(['tab4']),
+    }
   }
 </script>
 
 <style scoped lang="stylus">
   .main
-    height 100%
+    padding: 1.72rem 0 .98rem 0;
+    height 20rem
+    width 100%
     iframe
       display: block;
       width: 100%;

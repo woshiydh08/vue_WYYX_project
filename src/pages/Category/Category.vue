@@ -51,8 +51,6 @@
     name: "Category",
     data(){
       return{
-        typeArr0:[],
-        typeArr1:[],
         nowArr:[]
       }
     },
