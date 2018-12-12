@@ -47,7 +47,7 @@
   export default {
     name: "Tab1",
     computed:{
-      ...mapState(['tab1']),
+      ...mapState(['tab1','tab1List']),
     }
   }
 </script>

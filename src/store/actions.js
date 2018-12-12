@@ -5,13 +5,21 @@ import {
   reqCategory,
   reqMsite,
   reqFocusList,
+  reqTabs,
   reqTab1,
   reqTab2,
   reqTab3,
   reqTab4,
   reqTab5,
+  reqTab1List,
+  // reqTab2List,
+  // reqTab3List,
+  // reqTab5List,
   reqSendCode,
-  reqLogout
+  reqLogout,
+  reqFuzzyMsg,
+  reqKeyword,
+
 } from '../api'
 
 import {
@@ -24,15 +32,21 @@ import {
   RECEIVE_TAB4,
   RECEIVE_TAB5,
   RECEIVE_USER,
-  RESET_USER
+  RESET_USER,
+  RECEIVE_FUZZYMSG,
+  RECEIVE_KEYWORD,
+  RECEIVE_TABS,
+  RECEIVE_TAB1_LIST
+
 
 } from './mutation-types'
 
 export default {
   // 异步商品列表
-  async getCategory({commit, state}) {
+  async getCategory({commit, state},cb) {
     const result = await reqCategory()
     commit(RECEIVE_CATEGORY, {category: result})
+    cb()
   },
 
   async getMsite({commit, state}) {
@@ -44,6 +58,13 @@ export default {
     commit(RECEIVE_FOCUSLIST, {focuslist: result})
     typeof cb==='function' && cb()
   },
+
+  async getTabs({commit, state}) {
+    const result = await reqTabs()
+    console.log(result);
+    commit(RECEIVE_TABS, {tabs: result.data})
+  },
+
   async getTab1({commit, state}) {
     const result = await reqTab1()
     commit(RECEIVE_TAB1, {tab1: result.data})
@@ -56,14 +77,18 @@ export default {
     const result = await reqTab3()
     commit(RECEIVE_TAB3, {tab3: result.data.result})
   },
-  async getTab4({commit, state}) {
-    const result = await reqTab4()
-    commit(RECEIVE_TAB4, {tab4: result.data})
-  },
+
   async getTab5({commit, state}) {
     const result = await reqTab5()
     commit(RECEIVE_TAB5, {tab5: result.data.result})
   },
+
+  async getTab1List({commit, state}) {
+    const result = await reqTab1List()
+    console.log("Tab1List", result);
+    commit(RECEIVE_TAB1_LIST, {tab1List: result.data})
+  },
+
   //发送验证码
   async SendCode({commit, state}) {
     const result = await reqSendCode()
@@ -75,12 +100,23 @@ export default {
   },
 
   // 请求登出的异步action
-
   async logout ({commit}) {
     const result = await reqLogout()
     if(result.code===0) {
       commit(RESET_USER)
     }
+  },
+  //获取模糊搜索信息
+  async getFuzzyMsg ({commit},val) {
+    const result = await reqFuzzyMsg(val)
+    console.log(result.data);
+    commit(RECEIVE_FUZZYMSG, {FuzzyMsg: result.data})
+
+  },
+  async getKeyword({commit, state}) {
+    const result = await reqKeyword()
+    console.log(result.data);
+    commit(RECEIVE_KEYWORD, {keyword: result.data.data})
   },
 
 }

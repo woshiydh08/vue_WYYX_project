@@ -1,12 +1,13 @@
 import Vue from "vue";
 
 
-const Category = () => import ('../pages/Category/Category.vue')
 const Home = () => import ('../pages/Home/Home.vue')
+const Category = () => import ('../pages/Category/Category.vue')
 const Know = () => import ('../pages/Know/Know.vue')
-const Login = () => import ('../pages/Login/Login.vue')
 const ShopCart = () => import ('../pages/ShopCart/ShopCart.vue')
+const Login = () => import ('../pages/Login/Login.vue')
 const Personal = () => import('../pages/Personal/Personal.vue')
+const Search = () => import('../pages/Search/Search.vue')
 
 //二级路由
 import Recommend from '../pages/Home/Recommend/Recommend'
@@ -63,37 +64,37 @@ export default[
   {
     path: '/know',
     component: Know,
-    meta:{isShow: true},
+    // meta:{isShow: true},
     children:[
       {
         path: '/know/tab1',
         component: Tab1,
         props: true,
-        meta:{isShow: true}
+        // meta:{isShow: true}
       },
       {
         path: '/know/tab2',
         component: Tab2,
         props: true,
-        meta:{isShow: true},
+        // meta:{isShow: true},
       },
       {
         path: '/know/tab3',
         component: Tab3,
         props: true,
-        meta:{isShow: true},
+        // meta:{isShow: true},
       },
       {
         path: '/know/tab4',
         component: Tab4,
         props: true,
-        meta:{isShow: true},
+        // meta:{isShow: true},
       },
       {
         path: '/know/tab5',
         component: Tab5,
         props: true,
-        meta:{isShow: true},
+        // meta:{isShow: true},
       },
       { path: '/know', redirect: '/know/tab1' }
     ],
@@ -155,7 +156,11 @@ export default[
       }
     }
   },
-  { path: '/', redirect: '/category' }
+  {
+    path: '/search',
+    component: Search,
+  },
+  { path: '/', redirect: '/home' }
 ]
 
 

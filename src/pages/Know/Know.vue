@@ -2,7 +2,7 @@
 <div class="knowBody">
   <div class="headerWrapper">
     <div class="headerInner">
-      <div class="headerHome">
+      <div class="headerHome" @click="$router.replace('/home')">
       </div>
       <div class="headerFind">
         <span class="title">发现</span>
@@ -16,23 +16,26 @@
     </div>
   </div>
   <div class="headerTab">
-    <ul>
-      <li><router-link to="/know/tab1">推荐</router-link></li>
-      <li><router-link to="/know/tab2">达人</router-link></li>
-      <li><router-link to="/know/tab3">上新</router-link></li>
-      <li><router-link to="/know/tab4">晒单</router-link></li>
-      <li><router-link to="/know/tab5">HOME</router-link></li>
+    <ul v-if="tabs">
+      <li v-for="(tab,index) in tabs">
+        <router-link :to="`/know/tab${index+1}`">{{tab.tabName}}</router-link>
+      </li>
     </ul>
   </div>
   <router-view></router-view>
+  <footerNav></footerNav>
 </div>
 
 </template>
 
 <script>
+  import footerNav from './FooterGuide/FooterNav'
   import {mapState} from 'vuex'
   export default {
-      name: "Know",
+    name: "Know",
+    components:{
+      footerNav
+    },
     beforeRouteLeave:(to, from,next) =>{
       var size = (window.innerWidth || document.documentElement.clientWidth) / 1000 * 100;
       document.documentElement.style.fontSize = size + "px";
@@ -41,6 +44,7 @@
     },
 
     mounted(){
+      this.$store.dispatch('getTabs')
       this.$store.dispatch('getTab1')
       this.$store.dispatch('getTab2')
       this.$store.dispatch('getTab3')
@@ -48,7 +52,7 @@
       this.$store.dispatch('getTab5')
     },
     computed:{
-    ...mapState(['tab2']),
+    ...mapState(['tab2','tabs']),
 
     }
   }

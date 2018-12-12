@@ -6,7 +6,7 @@
             <div class="left">
               <img class="avatar" src="//yanxuan.nosdn.127.net/8945ae63d940cc42406c3f67019c5cb6.png" >
               <div class="info">
-                <p class="nickName">{{user.phone}}</p>
+                <p class="nickName">{{user.phone? user.phone:user.name}}</p>
                 <div class="level">普通用户</div>
               </div>
             </div>
@@ -103,14 +103,28 @@
 </template>
 
 <script>
+  import { Toast, MessageBox } from 'mint-ui'
+
   import {mapState} from 'vuex'
     export default {
         name: "Personal",
       methods:{
         logout(){
-          this.$store.dispatch('logout')
-          this.$router.replace('/login')
+          MessageBox.confirm("是否退出登录?").then(
+            action => {
+              this.$store.dispatch('logout')
+              this.$router.replace('/login')
+            },
+            action => {
+
+            }
+          )
         }
+
+
+
+
+
       },
       computed:{
         ...mapState(['user'])

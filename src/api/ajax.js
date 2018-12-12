@@ -1,6 +1,10 @@
 import axios from 'axios'
+import qs from 'qs';
+
+const instance = axios.create({})
 
 export default function ajax(url = '', data = {}, type = 'GET') {
+  const options = {};
   return new Promise(function (resolve, reject) {
 
     let promise
@@ -19,7 +23,8 @@ export default function ajax(url = '', data = {}, type = 'GET') {
       promise = axios.get(url)
     } else {
       // 发送post请求
-      promise = axios.post(url, data)
+      promise = instance.post(url, qs.stringify(data), options)
+      // promise = axios.post(url, data)
     }
 
     promise.then(response => {
@@ -29,4 +34,8 @@ export default function ajax(url = '', data = {}, type = 'GET') {
         reject(error)
       })
   })
+  /*
+  随机函数
+  */
+
 }
