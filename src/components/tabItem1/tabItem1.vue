@@ -4,19 +4,19 @@
           <div class="left">
             <div class="userName">
             <span class="ava">
-              <img :src="tab.avatar" alt="" >
+              <img :src="t.avatar" alt="" >
             </span>
-              <span class="name">{{tab.nickname}}</span>
+              <span class="name">{{t.nickname}}</span>
             </div>
-            <div class="title">{{tab.subTitle}}</div>
-            <div class="desc">{{tab.title}}</div>
+            <div class="title">{{t.subTitle}}</div>
+            <div class="desc">{{t.title}}</div>
             <div class="count">
               <i class="icon"></i>
-              <span class="see">{{tab.readCount}}人看过</span>
+              <span class="see">{{t.readCount}}人看过</span>
             </div>
           </div>
           <div class="right">
-            <img :src="tab.picUrl" alt="" width="100%" height="100%">
+            <img :src="t.picUrl" alt="" width="100%" height="100%">
           </div>
         </div>
       </div>
@@ -27,6 +27,7 @@
 
   export default {
     name: "Tab1",
+    props:["t"],
     computed:{
       ...mapState(['tab1']),
     }

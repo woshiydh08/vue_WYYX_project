@@ -57,7 +57,6 @@
 
 <script>
     import BScroll from 'better-scroll'
-    import Swiper from 'swiper'
     import 'swiper/dist/css/swiper.min.css'
     export default {
       name: "Home",
@@ -70,7 +69,6 @@
         new BScroll('.nav-list', {
           click: true, // 触发自定义click
           scrollX: true
-
         })
       },
       methods:{

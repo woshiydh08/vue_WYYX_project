@@ -13,6 +13,7 @@ export const RECEIVE_TAB4 = 'receive_tab4' //接受轮播图信息
 export const RECEIVE_TAB5 = 'receive_tab5' //接受轮播图信息
 export const RECEIVE_TAB1_LIST = 'receive_tab1_list' //接受轮播图信息
 
+export const RECEIVE_AUTO = 'receive_auto' //接受自动加载内容
 
 
 

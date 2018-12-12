@@ -28,6 +28,9 @@ export const reqKeyword = () => ajax(BASE + '/keyword')
 export const reqTabs = () => ajax(BASE163 + '/topic/v1/find/getTabs.json')
 export const reqTab1List = () => ajax(BASE163 + '/topic/v1/find/recManual.json')
 
+//获取上拉加载
+export const reqAuto = ({page,size}) => ajax(BASE163 + '/topic/v1/find/recAuto.json',{page,size})
+
 
 // [6、用户名密码登陆](#6用户名密码登陆)<br/>
 export const reqPwdLogin = ({name, pwd, captcha}) => ajax(BASE5000+'/login_pwd', {name, pwd, captcha}, 'POST')

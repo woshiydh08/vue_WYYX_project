@@ -13,6 +13,7 @@ import {
   RECEIVE_TAB4,
   RECEIVE_TAB5,
   RECEIVE_TAB1_LIST,
+  RECEIVE_AUTO,
   RECEIVE_USER,
   RESET_USER,
   RECEIVE_FUZZYMSG,
@@ -47,6 +48,16 @@ export default {
   [RECEIVE_TAB5](state, {tab5}) {
     state.tab5 = tab5
   },
+  [RECEIVE_TAB1_LIST](state, {tab1List}) {
+    state.tab1List = tab1List
+  },
+  [RECEIVE_AUTO](state,{autoMessage}){
+    console.log("push执行");
+    state.tab1List.push(...autoMessage)
+  },
+
+
+
   [RECEIVE_USER] (state, {user}) {
     state.user = user
   },

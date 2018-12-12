@@ -12,6 +12,7 @@ import {
   reqTab4,
   reqTab5,
   reqTab1List,
+  reqAuto,
   // reqTab2List,
   // reqTab3List,
   // reqTab5List,
@@ -36,7 +37,8 @@ import {
   RECEIVE_FUZZYMSG,
   RECEIVE_KEYWORD,
   RECEIVE_TABS,
-  RECEIVE_TAB1_LIST
+  RECEIVE_TAB1_LIST,
+  RECEIVE_AUTO
 
 
 } from './mutation-types'
@@ -83,11 +85,17 @@ export default {
     commit(RECEIVE_TAB5, {tab5: result.data.result})
   },
 
-  async getTab1List({commit, state}) {
+  async getTab1List({commit, state},cb) {
     const result = await reqTab1List()
-    console.log("Tab1List", result);
     commit(RECEIVE_TAB1_LIST, {tab1List: result.data})
+    cb&&cb();
   },
+  async getAuto({commit, state},{page,size}) {
+    const result = await reqAuto({page,size})
+    commit(RECEIVE_AUTO, {autoMessage: result.data.result})
+  },
+
+
 
   //发送验证码
   async SendCode({commit, state}) {

@@ -29,6 +29,8 @@
 </template>
 
 <script>
+  import BScroll from 'better-scroll'
+
   import footerNav from './FooterGuide/FooterNav'
   import {mapState} from 'vuex'
   export default {
@@ -44,12 +46,14 @@
     },
 
     mounted(){
+
       this.$store.dispatch('getTabs')
       this.$store.dispatch('getTab1')
       this.$store.dispatch('getTab2')
       this.$store.dispatch('getTab3')
-      // this.$store.dispatch('getTab4')
       this.$store.dispatch('getTab5')
+      this.$store.dispatch('getTab1List')
+
     },
     computed:{
     ...mapState(['tab2','tabs']),
@@ -62,6 +66,8 @@
   @import "../../common/stylus/media.styl"
   .knowBody
     background-color #f4f4f4
+    width 100%
+    height: 100%
     .headerWrapper
       height: 1rem;
       position: fixed !important;
